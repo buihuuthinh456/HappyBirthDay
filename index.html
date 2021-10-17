@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+</head>
+<body>
+    <div id="root">
+        <header class="header">
+            <div class="header-container container">
+                <div class="text-container">
+                    <div class="content-text">
+                        HAPPY BIRTH DAY 18/10/2021
+                     </div>
+                </div>
+            </div>
+        </header>
+        <div class="pyro"><div class="before"></div><div class="after"></div></div>
+        <div class="content-body">
+            <button class="clickme">Nhấn vào đây nè</button>
+            <div id="cake-container">
+                <div class="birthday-cake">
+                    <div class="holder"></div>
+                    <div class="shadow"></div>
+                    <div class="cake">
+                        <div class="chocolate"></div>
+                    </div>
+                    <div class="candle"></div>
+                    <div class="flame"></div>
+            
+                    <button class="btn clickme2" onclick="renderImg()">Nhấn vào đây nhận quà tiếp </button>
+              </div>`
+            </div>
+        </div>
+        <div class="chosen-img">
+            <h1>Chọn một ảnh đi , vẽ tặng cho</h1>
+            <div id="input">
+            <input type="file" name="picture" />
+            </div>
+            <div id="uploaded-image"></div>
+            <div id="btn-convert">
+            <span>Chọn xong rồi thì nhấn vào đây...nhớ là phải chọn trước đấy</span>
+            </div>
+            <canvas id="preview" style="display: none"></canvas>
+        </div>
+        <div class="gift-end">
+            <pre id="ascii"></pre>
+            <!-- <button class="btn clickme3" onclick="renderGiftEnd()">Nhấn vào đây nhận quà tiếp </button> -->
+        </div>
+        <audio controls autoplay loop="true" id="music">
+            <source src="./assets/music/HPBD.mp3" type="audio/ogg">
+          </audio>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
