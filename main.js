@@ -1,4 +1,6 @@
 const btnClick1 = document.querySelector('.clickme') 
+const btnClick3 = document.querySelector('.clickme3') 
+
 
 const contentBody = document.querySelector('.content-body')
 const root = document.querySelector('#root')
@@ -6,7 +8,24 @@ const cakeContainer = document.querySelector('#cake-container')
 
 const choseImg = document.querySelector('.chosen-img')
 const giftEnd = document.querySelector('.gift-end')
+const imgGiftEnd = document.querySelector('.giftend')
+
+const header1 = document.querySelector('.header1')
+const header2 = document.querySelector('.header2')
+
+
+
+
+
 const music = document.querySelector('#music')
+
+
+const canvas = document.getElementById('preview')
+const fileInput = document.querySelector('input[type="file"')
+const asciiImage = document.getElementById('ascii')
+const btnConvert = document.getElementById('btn-convert')
+
+
 music.volume = 0.1
 music.style.display ='none'
 
@@ -24,14 +43,21 @@ function renderBanhSinhNhat(){
 function renderImg(){
     choseImg.style.display ='block'
     cakeContainer.style.display ='none'
-
 }
 function showGift(){
-    giftEnd.style.display='block'
+    giftEnd.style.display='flex'
+    imgGiftEnd.style.display='none'
 }
 function hiddenCake(){
     choseImg.style.display ='none'
     cakeContainer.style.display ='none'
+}
+function renderGiftEnd(){
+    imgGiftEnd.style.display ='block'
+    btnClick3.style.display='none'
+    asciiImage.style.display='none'
+    header1.style.display='none'
+    header2.style.display='block'
 }
 
 btnClick1.onclick = renderBanhSinhNhat
@@ -41,21 +67,10 @@ btnClick1.onclick = renderBanhSinhNhat
 
 
 
-
-
-
-
-
 // 
 
 
-const canvas = document.getElementById('preview')
-const fileInput = document.querySelector('input[type="file"')
-const asciiImage = document.getElementById('ascii')
-const btnConvert = document.getElementById('btn-convert')
-
 const context = canvas.getContext('2d')
-
 const toGrayScale = (r, g, b) => 0.21 * r + 0.72 * g + 0.07 * b
 
 const getFontRatio = () => {
@@ -90,9 +105,9 @@ const convertToGrayScales = (context, width, height) => {
   }
 
   context.putImageData(imageData, 0, 0)
-
   return grayScales
 }
+
 
 const MAXIMUM_WIDTH = 300
 const MAXIMUM_HEIGHT = 300
@@ -121,7 +136,6 @@ const previewImage = (image) => {
 
 fileInput.onchange = (e) => {
   const file = e.target.files[0]
-
   const reader = new FileReader()
   reader.onload = (event) => {
     const image = new Image()
@@ -135,7 +149,7 @@ fileInput.onchange = (e) => {
       fileInput.style.display = 'none'
       btnConvert.addEventListener('click', () => {
         drawAscii(grayScales, width)
-     hiddenCake()
+        hiddenCake()
         showGift()
       })
     }

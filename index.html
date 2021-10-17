@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="root">
-        <header class="header">
+        <header class="header header1">
             <div class="header-container container">
                 <div class="text-container">
                     <div class="content-text">
@@ -18,9 +18,18 @@
                 </div>
             </div>
         </header>
+        <header class="header header2">
+            <div class="header-container container">
+                <div class="text-container">
+                    <div class="content-text">
+                        Vietnamese Women's Day 20/10
+                     </div>
+                </div>
+            </div>
+        </header>
         <div class="pyro"><div class="before"></div><div class="after"></div></div>
         <div class="content-body">
-            <button class="clickme">Nhấn vào đây nè</button>
+            <button class="clickme">Sinh nhật vui vẻ . Ấn vào đây đi :V</button>
             <div id="cake-container">
                 <div class="birthday-cake">
                     <div class="holder"></div>
@@ -30,7 +39,7 @@
                     </div>
                     <div class="candle"></div>
                     <div class="flame"></div>
-            
+                    
                     <button class="btn clickme2" onclick="renderImg()">Nhấn vào đây nhận quà tiếp </button>
               </div>`
             </div>
@@ -48,11 +57,14 @@
         </div>
         <div class="gift-end">
             <pre id="ascii"></pre>
-            <!-- <button class="btn clickme3" onclick="renderGiftEnd()">Nhấn vào đây nhận quà tiếp </button> -->
+            <img src="./assets/img/Nhi.png" alt="ColorImage" class="giftend">
+            <button class="btn clickme3" onclick="renderGiftEnd()">Quà này cho bạn Nhi</button>
+            <div class="text">Full Color cho bạn :V </div>
         </div>
         <audio controls autoplay loop="true" id="music">
             <source src="./assets/music/HPBD.mp3" type="audio/ogg">
-          </audio>
+        </audio>
+
     </div>
     <script src="./main.js"></script>
 </body>
